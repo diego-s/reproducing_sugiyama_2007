@@ -70,7 +70,8 @@ that no labels (Y) are needed in this process.
 # Extrapolating a linear model on the sinc function
 
 As described by Sugiyama, we draw the training and test samples from two 
-different gaussian distributions, as in the figure below:
+different gaussian distributions (the source domain and the target domain, 
+respectively), as in the figure below:
 
 ![Figure 1](figures/figure_1_sinc.png)
 
