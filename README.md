@@ -4,7 +4,7 @@ This is a basic exercise in covariate shift importance weighting. The
 simulation exercise described by Sugiyama *et al.* (2007) and a simple solution 
 using weighted least squares is implemented here.
 
-# Derivation of Importance Weighting
+# Importance Weighting
 
 When performing maximum likelihood estimation, the goal is to maximize the 
 expected value of a likelihood function $L(X,Y)$ over the joint distribution of 
