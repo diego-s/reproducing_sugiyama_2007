@@ -1,8 +1,8 @@
 # Reproducing Sugiyama 2007
 
 This is a basic exercise in covariate shift importance weighting. The 
-simulation exercise described by Sugiyama *et al.* (2007) and some solutions 
-using weighted least squares as well as uLSIF are implemented here.
+simulation exercise described by Sugiyama *et al.* (2007) and a simple solution 
+using weighted least squares is implemented here.
 
 # Derivation of Importance Weighting
 
@@ -73,27 +73,35 @@ As described by Sugiyama, we draw the training and test samples from two
 different gaussian distributions (the source domain and the target domain, 
 respectively), as in the figure below:
 
-![Figure 1](figures/figure_1_sinc.png)
+![Training (Source) and Test (Target) Distributions, and Ratio of their Densities](figures/figure_1_sinc.png)
+
+\clearpage
 
 An unweighted linear regression model is fit on the training data, which is 
 unsurprisingly not accurate at predicting the test data, since the linear 
 approximation is optimized locally on the region where the training data is 
 sampled from (the source domain).
 
-![Figure 2](figures/figure_2_sinc.png)
+![Unweighted Linear Regression](figures/figure_2_sinc.png)
+
+\clearpage
 
 A weighted linear regression model is then fit, using a logistic regression 
 classifier to estimate importance weights, as explained in the previous section.
 The model approximates the function in the region where the test data is sampled
 from (the target domain) much better.
 
-![Figure 3](figures/figure_3_sinc.png)
+![Weighted Linear Regression](figures/figure_3_sinc.png)
+
+\clearpage
 
 In addition, we can see that if we train a model on a training data sampled 
 from the target domain, the resulting linear approximation is very similar to 
 that resulting from the weighted linear regression model.
 
-![Figure 4](figures/figure_4_sinc.png)
+![Linear Regression Fit on Target Domain](figures/figure_4_sinc.png)
+
+\clearpage
 
 # References
 
