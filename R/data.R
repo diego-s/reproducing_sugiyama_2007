@@ -101,7 +101,7 @@ plot_sugiyama2007_density <- function(phi, output_path) {
         ylab("density") + 
         labs(color = "density", linetype = "density") + 
         scale_color_nejm()
-    ggsave(output_path)
+    ggsave(output_path, height = 4.5)
 }
 
 plot_sugiyama2007_data <- function(f, phi, data, theta, output_path) {
@@ -140,5 +140,5 @@ plot_sugiyama2007_data <- function(f, phi, data, theta, output_path) {
         ylab("f(x)") + 
         scale_color_nejm(na.translate = FALSE) + 
         scale_linetype_discrete(na.translate = FALSE)
-    ggsave(output_path)
+    ggsave(output_path, height = 4.5)
 }

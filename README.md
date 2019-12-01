@@ -54,15 +54,45 @@ and therefore
 
 $$
 \frac{P_{T}(X)}{P_{S}(X)} = 
+    \frac{P_{C}(X|T)}{P_{C}(X|S)} = 
+    \frac{P_{C}(T|X) P_{C}(S)}{P_{C}(S|T) P_{C}(T)}.
+$$
 
-# Results
+This suggests that we could estimate the necessary importance weight as 
+$\frac{g_{C}(T|X) N_{S}}{(1 - g_{C}(T|X)) N_{T}}$, where $g_C(T|X)$ is a 
+an estimate of the conditional probability obtained by training a classifier 
+from a sample of the combined domain having $N_{S}$ observations 
+from the source domain and $N_{T}$ observations from the target domain. Note 
+that no labels (Y) are needed in this process.
 
-# Extrapolating a linear model on the Sinc function
+# Outputs
+
+# Extrapolating a linear model on the sinc function
 
 As described by Sugiyama, we draw samples from two gaussian 
 distributions, as in the figure below:
 
-![Figure 1](figures/figure_1_sin.png)
+![Figure 1](figures/figure_1_sinc.png)
+
+An unweighted linear regression model is fit on the training data, which is 
+unsurprisingly not accurate at predicting the test data, since the linear 
+approximation is optimized locally on the region where the training data is 
+sampled from (the source domain).
+
+![Figure 2](figures/figure_2_sinc.png)
+
+A weighted linear regression model is then fit, using a logistic regression 
+classifier to estimate importance weights, as explained in the previous section.
+The model approximates the function in the region where the test data is sampled
+from (the target domain) much better.
+
+![Figure 3](figures/figure_3_sinc.png)
+
+In addition, we can see that if we train a model on a training data sampled 
+from the target domain, the resulting linear approximation is very similar to 
+that resulting from the weighted linear regression model.
+
+![Figure 4](figures/figure_4_sinc.png)
 
 # References
 
