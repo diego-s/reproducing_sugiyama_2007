@@ -83,7 +83,7 @@ draw_sugiyama2007_data <- function(N = 150, M = 1, phi = 1, gamma = 0.25,
     return(data)
 }
 
-plot_sugiyama2007_density <- function(phi) {
+plot_sugiyama2007_density <- function(phi, output_path) {
     x <- seq(-0.5, 3, length.out = 300)
     pdf_1 <- dnorm(x, mean = 1, sd = 0.5)
     pdf_2 <- dnorm(x, mean = 1 + phi, sd = 0.25)
@@ -101,7 +101,7 @@ plot_sugiyama2007_density <- function(phi) {
         ylab("density") + 
         labs(color = "density", linetype = "density") + 
         scale_color_nejm()
-    ggsave("figures/figure_1.png")
+    ggsave(output_path)
 }
 
 plot_sugiyama2007_data <- function(f, phi, data, theta, output_path) {
