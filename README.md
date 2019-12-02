@@ -105,4 +105,4 @@ that resulting from the weighted linear regression model.
 
 # References
 
-Sugiyama *et al.*, Journal of Machine Learning Research 8 (2007) 985-1005.
+[Sugiyama *et al.*, Journal of Machine Learning Research 8 (2007) 985-1005.](http://www.jmlr.org/papers/volume8/sugiyama07a/sugiyama07a.pdf)
