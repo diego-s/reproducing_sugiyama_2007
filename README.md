@@ -67,7 +67,7 @@ that no labels (Y) are needed in this process.
 
 # Outputs
 
-# Extrapolating a linear model on the sinc function
+# Simple Illustrative Example: Extrapolating a linear model on the sinc function
 
 As described by Sugiyama, we draw the training and test samples from two 
 different gaussian distributions (the source domain and the target domain, 
