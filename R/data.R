@@ -111,13 +111,13 @@ plot_sugiyama2007_data <- function(f, phi, data, theta, output_path) {
     y_1 <- data$y_1
     x_2 <- data$X_2[,1]
     y_2 <- data$y_2
-    y_hat <- c(cbind(rep(1, length(x_f)), x_f) %*% theta)
-    levels <- c("f(x)", "y_hat", "training", "test")
+    f_hat <- c(cbind(rep(1, length(x_f)), x_f) %*% theta)
+    levels <- c("f(x)", "f_hat(x)", "training", "test")
     data <- data.frame(
         x_f = c(x_f, x_f, rep(NA, length(y_1)), rep(NA, length(y_2))), 
-        y_f = c(y_f, y_hat, rep(NA, length(y_1)), rep(NA, length(y_2))), 
+        y_f = c(y_f, f_hat, rep(NA, length(y_1)), rep(NA, length(y_2))), 
         x_n = c(rep(NA, length(x_f)), rep(NA, length(x_f)), x_1, x_2), 
-        y_n = c(rep(NA, length(y_f)), rep(NA, length(y_hat)), y_1, y_2), 
+        y_n = c(rep(NA, length(y_f)), rep(NA, length(f_hat)), y_1, y_2), 
         line_type = factor(c(
             rep(levels[1], times = length(x_f)), 
             rep(levels[2], times = length(x_f)), 
